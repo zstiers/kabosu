@@ -12,11 +12,7 @@ class KabosuConan(ConanFile):
     options = { "shared": [True, False] }
     default_options = "shared=True"
     generators = "cmake"
-    scm = {
-        "type": "git",
-        "url": "auto",
-        "revision": "auto"
-    }
+    exports_sources = ("CMakeLists.txt", "inc/*", "src/*", "test/*")
 
     def build(self):
         cmake = CMake(self)
