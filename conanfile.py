@@ -3,7 +3,7 @@ import os
 
 class KabosuConan(ConanFile):
     name = "kabosu"
-    version = "0.1.0"
+    version = "0.2"
     license = "BSD 3-clause"
     author = "Zachary Stiers"
     url = "https://github.com/zstiers/kabosu"
@@ -28,6 +28,7 @@ class KabosuConan(ConanFile):
         self.copy("*.a"  , dst="lib", src="", keep_path=False)
         self.copy("*.so" , dst="lib", src="", keep_path=False)
         self.copy("*.lib", dst="lib", src="", keep_path=False)
+        self.copy("*.pdb", dst="lib", src="", keep_path=False)
         self.copy("*.dll", dst="bin", src="", keep_path=False)
         
     def package_info(self):
